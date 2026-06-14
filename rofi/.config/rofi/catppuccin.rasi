@@ -1,0 +1,109 @@
+* {
+    background:     rgba(30, 30, 46, 0.90);
+    foreground:     rgba(205, 214, 244, 100%);
+    selected:       rgba(137, 180, 250, 100%);
+    urgent:         rgba(243, 139, 168, 100%);
+    active:         rgba(166, 227, 161, 100%);
+    lightbg:        rgba(69, 71, 90, 0.70);
+    lightfg:        rgba(166, 173, 200, 100%);
+
+    background-color:    var(background);
+    text-color:          var(foreground);
+    border-color:        var(selected);
+
+    spacing: 4;
+}
+
+window {
+    background-color:   var(background);
+    border:             1px;
+    border-color:       rgba(137, 180, 250, 0.30);
+    border-radius:      8px;
+    padding:            6px;
+    transparency:       "real";
+}
+
+mainbox {
+    spacing: 0;
+}
+
+inputbar {
+    padding:        6px 12px;
+    spacing:        8px;
+    background-color: rgba(24, 24, 37, 0.60);
+    border-radius:  6px;
+    border:         0;
+}
+
+entry {
+    placeholder:    "Search...";
+    placeholder-color: var(lightfg);
+    text-color:     var(foreground);
+}
+
+listview {
+    padding:        4px 0;
+    spacing:        2px;
+}
+
+element {
+    padding:        6px 12px;
+    cursor:         pointer;
+    spacing:        8px;
+    border-radius:  4px;
+    text-color:     var(foreground);
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       var(foreground);
+}
+
+element normal.urgent {
+    background-color: var(urgent);
+    text-color:       rgba(30, 30, 46, 100%);
+}
+
+element normal.active {
+    background-color: var(active);
+    text-color:       rgba(30, 30, 46, 100%);
+}
+
+element selected.normal {
+    background-color: var(selected);
+    text-color:       rgba(30, 30, 46, 100%);
+}
+
+element selected.urgent {
+    background-color: rgba(243, 139, 168, 0.80);
+    text-color:       rgba(30, 30, 46, 100%);
+}
+
+element selected.active {
+    background-color: rgba(166, 227, 161, 0.80);
+    text-color:       rgba(30, 30, 46, 100%);
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color:       var(foreground);
+}
+
+element-icon {
+    size:            24px;
+}
+
+element-text {
+    text-color:      inherit;
+    vertical-align:  0.5;
+}
+
+scrollbar {
+    handle-color:   var(selected);
+    handle-width:   4px;
+    border-radius:  2px;
+}
+
+button {
+    text-color:     var(foreground);
+}

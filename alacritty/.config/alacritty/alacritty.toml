@@ -1,0 +1,39 @@
+# ~/.config/alacritty/alacritty.toml
+[general]
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[font]
+normal = { family = "Iosevka Nerd Font", style = "Regular" }
+bold   = { family = "Iosevka Nerd Font", style = "Bold"   }
+italic = { family = "Iosevka Nerd Font", style = "Italic" }
+# bold_italic = ... (optional)
+size = 14.0
+
+[window]
+#opacity = 0.95
+dimensions = { columns = 136, lines = 30 }
+decorations = "none"          # equivalent to hide_window_decorations yes
+padding = { x = 6, y = 4 }    # kitty's window_padding_width 8 → uniform 8 px
+dynamic_padding = true
+dynamic_title = false
+startup_mode = "Maximized"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }   # block + blinking
+# Alacritty has no direct "cursor_animation yes" with custom duration
+# Closest is blink_interval (in ms) — default 750 ms works well
+blink_interval = 400          # faster blink ≈ smoother feel (try 400–600)
+unfocused_hollow = true       # typical minimal setup
+
+#[scrolling]
+#history = 10000               # scrollback_lines
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
+
+
+

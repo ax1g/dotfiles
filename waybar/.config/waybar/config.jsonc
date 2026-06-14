@@ -1,0 +1,86 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "custom/poweroff"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "clock": {
+    "format": "  {:%a · %I:%M %p · %d %b}",
+    "format-alt": "  {:%A · %I:%M:%S %p · %d %B %Y}",
+    "interval": 30,
+    "tooltip": false,
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#f5c2e7'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'>{}</span>",
+        "weeks": "<span color='#89b4fa'>{}</span>",
+        "weekdays": "<span color='#a6e3a1'>{}</span>"
+      }
+    },
+    "on-click": "shift"
+  },
+  "network": {
+    "format": "  {bandwidthDownBytes}",
+    "format-disconnected": "⚠  disconnected",
+    "tooltip-format": "{ipaddr}  {essid}",
+    "interval": 3
+  },
+  "bluetooth": {
+    "format": "{status}",
+    "format-disabled": " off",
+    "format-connected": " {device_alias}",
+    "format-no-controller": "",
+    "on-click": "bash -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'",
+    "on-click-right": "alacritty -e bluetoothctl"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "format-muted": " muted",
+    "on-click": "pavucontrol"
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 5,
+    "on-click": "alacritty -o 'window.padding.x=0' -o 'window.padding.y=0' -e btop"
+  },
+  "memory": {
+    "format": " {}%",
+    "interval": 5,
+    "on-click": "alacritty -o 'window.padding.x=0' -o 'window.padding.y=0' -e btop"
+  },
+  "custom/poweroff": {
+    "format": "⏻",
+    "on-click": "$HOME/.config/waybar/scripts/powermenu.sh",
+    "tooltip": "Power Menu"
+  }
+}
